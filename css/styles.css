@@ -1,3 +1,129 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+img {
+    display: block;
+}
+
+h2 {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -0.75px;
+    margin: 0;
+}
+
+h3 {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 28px;
+    letter-spacing: -0.75px;
+    margin: 0;
+
+}
+
+body {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+#third-section {
+    background-color: #7A3145;
+    display: flex;
+    /* Flexbox aktif edilir */
+    flex-direction: column;
+    /* Dikey düzen */
+    gap: 40px;
+    /* Elemanlar arası boşluk */
+    padding: 80px 20px;
+
+}
+
+.third-section-top {
+    display: flex;
+    /* Flexbox aktif edilir */
+    flex-direction: column;
+    /* Dikey düzen */
+    gap: 20px;
+    /* Elemanlar arası boşluk */
+    max-width: 626px;
+}
+
+.third-section-title {
+    color: white;
+    max-width: 335px;
+}
+
+.third-section-text {
+    color: white;
+}
+
+.third-section-bottom {
+    display: flex;
+    /* Flexbox aktif edilir */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* Elemanlar arası boşluk */
+}
+
+.vegetables-cards {
+    width: 335px;
+    height: 376px;
+    padding: 32px 24px;
+    display: flex;
+    /* Flexbox aktif edilir */
+    flex-direction: column;
+    /* Dikey düzen */
+    gap: 10px;
+    /* Elemanlar arası boşluk */
+    border-radius: 40px;
+    background-color: #FBFBFB;
+}
+
+.vegetables-card {
+    display: flex;
+    /* Flexbox aktif edilir */
+    flex-direction: column;
+    /* Dikey düzen */
+    gap: 12px;
+}
+
+.vegetables-texts {
+    display: flex;
+    /* Flexbox aktif edilir */
+    flex-direction: column;
+    /* Dikey düzen */
+    gap: 12px;
+}
+
+.vegetables-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
 /* fifth-section by yesimbozkurt */
 #fifth-section {
     display: flex;
@@ -70,6 +196,80 @@
     color: #576F35;
 }
 
+.inp-wrp {
+    margin-bottom: 40px;
+}
+
+.inp {
+    width: 400px;
+    height: 50px;
+    padding: 0 20px;
+    border: 1px solid gray;
+    border-radius: 30px;
+    outline: none;
+}
+
+/* стилізація плейсхолдера */
+.inp::placeholder {
+    color: black;
+}
+
+/* стилізація інпута в стані фокус */
+.inp:focus {
+    border-color: brown;
+}
+
+/* стилізація інпута при не валідному значенні */
+.inp:not(:placeholder-shown):invalid {
+    border-color: red;
+}
+
+/* стилізація інпута при валідному значенні */
+.inp:not(:placeholder-shown):valid {
+    border-color: green;
+}
+
+.text-valid,
+.text-invalid {
+    font-size: 14px;
+    padding-left: 20px;
+    margin-top: 4px;
+    display: none;
+}
+
+.text-valid {
+    color: green;
+}
+
+.text-invalid {
+    color: red;
+}
+
+/* стилізація інформаційного текста при валідному значенні в інпуті */
+.inp:not(:placeholder-shown):valid~.text-valid {
+    display: block;
+}
+
+/* стилізація інформаційного текста при не валідному значенні в інпуті */
+.inp:not(:placeholder-shown):invalid~.text-invalid {
+    display: block;
+}
+
+.button-send {
+    display: block;
+    margin: 0 auto;
+    min-width: 160px;
+    padding: 12px 24px;
+    background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.button-send:is(:hover, :focus) {
+    border-color: brown;
+}
+
 .fifth-section-form-container .form-box input,
 .fifth-section-form-container .form-box textarea {
     width: 100%;
@@ -109,10 +309,10 @@
     color: #FBFBFB;
 }
 
-.fifth-section-form-container .form-box button:hover {
-    background-color: #FBFBFB;
-    color: #7A3145;
-}
+/* .fifth-section-form-container .form-box button:hover {
+  background-color: #FBFBFB;
+  color: #7A3145;
+} */
 
 .fifth-section-img-container {
     background-color: #7A3145;
@@ -142,6 +342,8 @@
     font-size: 14px;
     line-height: 20px;
     margin-top: 20px;
+    text-align: left;
+
 }
 
 .fifth-section-img-container .social-media {
@@ -154,6 +356,7 @@
     flex-wrap: wrap;
     gap: 8px;
     margin-top: 16px;
+    text-align: left;
 }
 
 .fifth-section-img-container .social-media li a {
@@ -161,7 +364,19 @@
     text-decoration: none;
 }
 
+
+
+
+
+
+
+
 @media (min-width: 768px) {
+    #third-section {
+        padding: 100px 32px;
+        gap: 52px;
+    }
+
     h2 {
         font-size: 64px;
         line-height: 64px;
@@ -170,6 +385,27 @@
     body {
         font-size: 16px;
         line-height: 20px;
+    }
+
+    .third-section-top {
+        gap: 24px;
+    }
+
+    .third-section-bottom {
+        row-gap: 28px;
+        column-gap: 24px;
+    }
+
+    .vegetables-cards {
+        width: 340px;
+        height: 380px;
+        padding: 32px 30px;
+        gap: 12px;
+    }
+
+    .third-section-title {
+        width: 508px;
+        height: 128px;
     }
 
     /* fifth-section by yesim */
@@ -216,6 +452,9 @@
 }
 
 @media (min-width: 1280px) {
+    #third-section {
+        padding: 100px;
+    }
 
     /* fifth-section by yesim */
     #fifth-section {
@@ -250,4 +489,5 @@
     .fifth-section-img-container .fifth-section-social-media {
         width: 386px;
     }
+
 }
